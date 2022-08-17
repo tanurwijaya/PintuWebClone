@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes price-change-lower {
+  from {color: black;}
+  to {color: #D34E47;}
+}
+
+@keyframes price-change-greater {
+  from {color: black;}
+  to {color: #52A56A;}
+}
+
+.price-increase {
+  animation-name: price-change-greater;
+  animation-duration: 1.5s;
+}
+
+.price-decrease {
+  animation-name: price-change-lower;
+  animation-duration: 1.5s;
+}
