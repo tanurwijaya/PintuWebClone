@@ -9,7 +9,7 @@ const MobileTable = () => {
     const [durationFilter, setDurationFilter] = useState<DurationFilterType>('day');
     return(
         <div>
-            <div className='flex-1 space-x flex flex-row py-5 border-t-2 border-b-2 border-slate-100'>
+            <div className='flex-1 space-x flex flex-row py-5 border-t-2 border-b-2 border-slate-100 px-4'>
                 <p className='flex flex-1 font-bold text-xs'>CRYPTO</p>
                 <select id='duration' onChange={(event)=>setDurationFilter(event.target.value as DurationFilterType)} className='font-bold border border-gray-300 text-gray-900 text-xs pl-1 py-1 rounded-md'>
                     <option value='day'>24 JAM</option>
@@ -22,13 +22,13 @@ const MobileTable = () => {
                 return(
                     <div className='flex flex-1 py-4 items-center border-b-2 border-slate-100'>
                         <div className='flex flex-1 items-center'>
-                            <img src={data.logo} alt={`${data.name} logo`} className='w-8 h-8 mr-6'/>
+                            <img src={data.logo} alt={`${data.name} logo`} style={{ filter: `opacity(0.65) saturate(400%) drop-shadow(0 0 0 ${data.color}) brightness(125%)`}} className='w-8 h-8 mx-4'/>
                             <div>
                                 <p className='font-bold'>{data.name}</p>
                                 <p className='text-slate-400 text-sm'>{data.currencySymbol}</p>
                             </div>
                         </div>
-                        <div className='flex flex-col items-end'>
+                        <div className='flex flex-col items-end pr-4'>
                             <LatestPrice latestPrice={data.price.latestPrice}/>
                             <ChangePercentage price={data.price[durationFilter]}/>
                         </div>

@@ -3,7 +3,6 @@ import {useMarketContext} from "../../context/MarketContext";
 import LatestPrice from "../LatestPrice";
 import ChangePercentage from "../ChangePercentage";
 
-
 const DesktopTable = () => {
     const {marketData} = useMarketContext()
     return(
@@ -20,24 +19,26 @@ const DesktopTable = () => {
             </thead>
             <tbody className="bg-white">
             {
-                marketData.map((data)=>(
-                    <tr className="whitespace-nowrap cursor-pointer">
-                        <td className='py-6 pr-4 font-bold'>
-                            <div className='flex flex-1 flex-row items-center'>
-                                <img src={data.logo} alt={`${data.name} logo`} className='w-8 h-8 mx-4'/>
-                                <div className='flex flex-1 flex-row space-x flex-wrap'>
-                                    <p className='flex flex-1'>{data.name}</p>
-                                    <p className='w-10'>{data.currencySymbol}</p>
-                                </div>
-                            </div>
-                        </td>
-                        <LatestPrice latestPrice={data.price.latestPrice}/>
-                        <ChangePercentage price={data.price.day}/>
-                        <ChangePercentage price={data.price.week}/>
-                        <ChangePercentage price={data.price.month}/>
-                        <ChangePercentage price={data.price.year}/>
-                    </tr>
-                ))
+                marketData.map((data)=> {
+                    return(
+                        <tr className="whitespace-nowrap">
+                            <td className='py-6 pr-4 font-bold'>
+                                <a href={`market/${data.currencySymbol}`} className='flex flex-1 flex-row items-center'>
+                                    <img src={data.logo} alt={`${data.name} logo`} style={{ filter: ``}} className='w-8 h-8 mx-4'/>
+                                    <div className='flex flex-1 flex-row space-x flex-wrap'>
+                                        <p className='flex flex-1'>{data.name}</p>
+                                        <p className='w-10'>{data.currencySymbol}</p>
+                                    </div>
+                                </a>
+                            </td>
+                            <LatestPrice latestPrice={data.price.latestPrice}/>
+                            <ChangePercentage price={data.price.day}/>
+                            <ChangePercentage price={data.price.week}/>
+                            <ChangePercentage price={data.price.month}/>
+                            <ChangePercentage price={data.price.year}/>
+                        </tr>
+                    )
+                })
             }
             </tbody>
         </table>

@@ -6,8 +6,8 @@ import MarketTable from "../components/table";
 
 const WalletScreen = () => {
     return (
-        <div className="flex flex-1 pt-4 pb-4 px-4 flex-col items-center max-w-full">
-            <div className='max-w-full w-full'>
+        <div className="flex flex-1 pt-4 pb-4 lg:px-20 md:px-6 flex-col items-center max-w-full">
+            <div className='max-w-full w-full md:px-0 px-4'>
                 <Header/>
                 <TopMovers/>
                 <Filter/>

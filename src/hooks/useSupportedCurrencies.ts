@@ -40,11 +40,7 @@ const fetchSupportedCurrencies = async (): Promise<SupportedCurrenciesResponse> 
 }
 
 export const useSupportedCurrencies = () => {
-    console.log('a')
     const context = useQuery(['supportedCurrencies'], fetchSupportedCurrencies);
-    console.log('b')
     const data = context.data?.payload
-    console.log('c')
-
     return { ...context, data: data ?? [] };
 };
