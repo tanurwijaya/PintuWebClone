@@ -16,11 +16,6 @@ jobs:
           node-version: 16.x
           cache: yarn
 
-      - name: 🏗 Setup Expo
-        uses: expo/expo-github-action@v7
-        with:
-          expo-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
       - run: yarn run build
 
       - name: Force push to destination branch
