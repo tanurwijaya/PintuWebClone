@@ -1,7 +1,8 @@
 name: Pintu Clone Deployment
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
