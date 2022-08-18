@@ -46,7 +46,7 @@ export const MarketProvider = ({children}: { children : JSX.Element}) => {
             })
             setMarketData(mappedData)
         }
-    }, [isPriceChangesLoading, isCurrenciesLoading, isRefetching])
+    }, [isPriceChangesLoading, isCurrenciesLoading, isRefetching, currenciesData, priceChangesData])
 
     return (
         <MarketContext.Provider value={{isLoading: isCurrenciesLoading, marketData}}>

@@ -10,7 +10,7 @@ const LatestPrice = ({latestPrice}: {latestPrice:string}) => {
             setInjectedClass(parsedPrice > prevPrice.current ? 'price-increase':'price-decrease')
         }
         prevPrice.current = parsedPrice
-    },[latestPrice])
+    },[latestPrice, parsedPrice])
     return(
         <td className={`font-bold ${injectedClass}`}>Rp {thousandSeparator(latestPrice)}</td>
     )
