@@ -22,10 +22,11 @@ jobs:
         run: |
           git config --global user.name $user_name
           git config --global user.email $user_email
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          yarn run deploy -- -u "github-actions-bot <support+actions@github.com>"
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          yarn run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
 
       - name: Force push to destination branch
         uses: ad-m/github-push-action@v0.5.0
