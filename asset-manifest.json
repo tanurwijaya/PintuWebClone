@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pintu-clone/static/css/main.93367dd9.css",
+    "main.js": "/pintu-clone/static/js/main.b8f0ac3f.js",
+    "static/js/787.d1d4a2c2.chunk.js": "/pintu-clone/static/js/787.d1d4a2c2.chunk.js",
+    "index.html": "/pintu-clone/index.html",
+    "main.93367dd9.css.map": "/pintu-clone/static/css/main.93367dd9.css.map",
+    "main.b8f0ac3f.js.map": "/pintu-clone/static/js/main.b8f0ac3f.js.map",
+    "787.d1d4a2c2.chunk.js.map": "/pintu-clone/static/js/787.d1d4a2c2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.93367dd9.css",
+    "static/js/main.b8f0ac3f.js"
+  ]
+}
