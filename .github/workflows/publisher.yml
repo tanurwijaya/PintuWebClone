@@ -28,7 +28,7 @@ jobs:
           git config --global user.name $user_name
           git config --global user.email $user_email
           git config --global --add safe.directory '*'
-          git remote set-url origin https://${secrets.GITHUB_TOKEN}@github.com/${github.repository}
+          git remote set-url origin https://${github_token}@github.com/${repository}
           yarn run deploy
 
       - name: Force push to destination branch
