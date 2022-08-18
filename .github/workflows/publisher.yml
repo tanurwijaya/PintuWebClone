@@ -12,7 +12,7 @@ jobs:
 
       - name: Set ownership
         run: |
-          git config --global --add safe.directory /github/workspace
+          git config --global --add safe.directory ${GITHUB_WORKSPACE}
           chown -R $(id -u):$(id -g) $PWD
 
       - name: 🏗 Setup Node
