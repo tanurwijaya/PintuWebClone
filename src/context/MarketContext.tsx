@@ -7,7 +7,7 @@ interface MarketContextInterface {
     marketData: MarketDataInterface[],
 }
 
-interface MarketDataInterface {
+export interface MarketDataInterface {
     name: string,
     currencySymbol: string,
     price: PriceInterface,

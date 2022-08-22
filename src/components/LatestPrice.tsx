@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {thousandSeparator} from "../utils/strings";
 
-const LatestPrice = ({latestPrice}: {latestPrice:string}) => {
+const LatestPrice = ({latestPrice, className}: {latestPrice:string, className?: string}) => {
     const parsedPrice = parseFloat(latestPrice);
     const prevPrice = React.useRef<number|undefined>();
     const [injectedClass, setInjectedClass] = React.useState<string|null>(null);
@@ -12,7 +12,7 @@ const LatestPrice = ({latestPrice}: {latestPrice:string}) => {
         prevPrice.current = parsedPrice
     },[latestPrice, parsedPrice])
     return(
-        <td className={`font-bold ${injectedClass}`}>Rp {thousandSeparator(latestPrice)}</td>
+        <td className={`font-bold ${injectedClass} ${className}`}>Rp {thousandSeparator(latestPrice)}</td>
     )
 }
 

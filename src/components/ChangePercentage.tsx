@@ -1,7 +1,7 @@
 import {ChevronDownIcon, ChevronUpIcon} from "@heroicons/react/solid";
 import React from "react";
 
-const ChangePercentage = ({price}: {price: string}) => {
+const ChangePercentage = ({price, className}: {price: string, className?:string}) => {
     const parsedPrice = parseFloat(price)
     if(parsedPrice < 0){
         return(
